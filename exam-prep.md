@@ -153,4 +153,30 @@ POST _template/hamlet_template
 }
 ```
 
+#### restrict dynamic document update in template
+```
+POST _template/newindex 
+{
+  "index_patterns": ["test_*"],
+  "settings": {
+    "number_of_replicas": 0,
+    "number_of_shards": 1
+    
+  },
+
+  "mappings": {
+      "dynamic" : "strict",
+    "properties": {
+      "name" : {
+        "type": "text"
+      },
+      "age" : {
+        "type" : "integer"
+      }
+    }
+  }
+  
+}
+```
+
 ### Add the dynamic
