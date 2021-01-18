@@ -180,3 +180,10 @@ POST _template/newindex
 ```
 
 ### Add the dynamic
+
+
+
+### Add aloas index
+```
+PUT hamlet-*/_alias/hamlet
+```
