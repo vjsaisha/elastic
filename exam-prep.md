@@ -97,7 +97,7 @@ PUT hamlet/_doc/_bulk
 {"index":{"_index":"hamlet","_id":12}}
 {"line_number":"1.5.3","speaker":"HAMLET","text_entry":"I will."}
 ```
-
+**** snapshot and script based replace is pending ****
 
 ### Create the index template `hamlet_template`, so that the template (i) matches any index that starts by "hamlet_" or "hamlet-", (ii) allocates one primary shard and no replicas for each matching index 
 ```
@@ -152,3 +152,5 @@ POST _template/hamlet_template
   }
 }
 ```
+
+### Add the dynamic
