@@ -97,3 +97,31 @@ PUT hamlet/_doc/_bulk
 {"index":{"_index":"hamlet","_id":12}}
 {"line_number":"1.5.3","speaker":"HAMLET","text_entry":"I will."}
 ```
+
+
+### Create the index template `hamlet_template`, so that the template (i) matches any index that starts by "hamlet_" or "hamlet-", (ii) allocates one primary shard and no replicas for each matching index 
+```
+PUT _template/hamlet_template
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "index_patterns": ["hamlet_*","hamlet-*"]
+}
+```
+### Create the indices `hamlet2` and `hamlet_test` Verify that only `hamlet_test` applies the settings defined in `hamlet_template`
+```
+PUT hamlet2/_doc/1
+{
+  "test" : "test_field"
+}
+
+PUT hamlet_test/_doc/1
+{
+  "test" : "test_field"
+}
+
+GET hamlet_test/_settings
+GET hamlet2/_settings
+```
