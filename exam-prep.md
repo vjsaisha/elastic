@@ -24,3 +24,16 @@ POST hamlet_raw/_update/1
   "line_number" : "3.1.36"
  }
  ```
+1. New document with automated id assigned
+# Add a new document to `hamlet-raw`, so that the document 
+# (i) has the id automatically assigned by Elasticsearch, 
+# (ii) has default type, 
+# (iii) has a field named `text_entry` with value  "Whether tis nobler in the mind to suffer"
+# (iv) has a field named `line_number` with value "3.1.66"
+```
+POST hamlet_raw/_doc
+{
+"text_entry" : "Whether tis nobler in the mind to suffer",
+"line_number" : "3.1.66"
+}
+```
