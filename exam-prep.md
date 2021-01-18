@@ -51,3 +51,19 @@ POST hamlet_raw/_update_by_query
 }
 }
 ```
+### # Update the document with id "1" by renaming the field `line` into `text_entry`
+```
+POST hamlet_raw/_update/1
+{
+  "script": {
+    "source" : "ctx._source.remove('line') "
+  }
+}
+
+POST hamlet_raw/_update/1
+{
+  "script": {
+    "source": "ctx._source.text_entry = 'To be, or not to be that is the question'"
+  }
+}
+```
