@@ -212,7 +212,23 @@ POST _aliases
 
 #### Index document with pipeline
 ```
-POST hamlet-1/_doc?pipeline=<pipelineid>
+POST hamlet/_doc?pipeline=samplepipeline
 {
-"line" : 11.1.1
+  "line_number" : "1.1.1"
 }
+
+
+PUT  _ingest/pipeline/samplepipeline
+{
+  "description" : "process line",
+ "processors": [
+    {
+    "dissect":
+    {
+      "field" : "line_number",
+      "pattern": "%{section}.%{para}.%{line}"
+    }
+    }
+    ]
+}
+```
