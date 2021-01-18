@@ -125,3 +125,30 @@ PUT hamlet_test/_doc/1
 GET hamlet_test/_settings
 GET hamlet2/_settings
 ```
+
+### Update `hamlet_template` by defining a mapping for the type "_doc", so that (i) the type has three fields, named `speaker`, `line_number`, and `text_entry`, (ii) `text_entry` uses an "english" analyzer
+
+```
+POST _template/hamlet_template
+{
+    "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "index_patterns": ["hamlet_*","hamlet-*"],
+  "mappings": {
+    "properties": {
+      "speaker" : {
+        "type" : "keyword"
+      },
+      "line_number" : {
+      "type": "keyword"
+      },
+      "text_entry" : {
+        "type": "text",
+        "analyzer": "english"
+      }
+    }
+  }
+}
+```
