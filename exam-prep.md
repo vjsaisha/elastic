@@ -210,3 +210,9 @@ POST _aliases
 }
 ```
 
+#### Index document with pipeline
+```
+POST hamlet-1/_doc?pipeline=<pipelineid>
+{
+"line" : 11.1.1
+}
