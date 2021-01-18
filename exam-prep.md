@@ -187,3 +187,26 @@ POST _template/newindex
 ```
 PUT hamlet-*/_alias/hamlet
 ```
+
+## Add multiple indices and single alias in which single write index
+```
+POST _aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "hamlet-1",
+        "alias": "hamlet",
+        "is_write_index" : true
+      }
+    },
+    {
+            "add": {
+        "index": "hamlet-2",
+        "alias": "hamlet"
+      }
+    }
+  ]
+}
+```
+
