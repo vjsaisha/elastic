@@ -67,3 +67,33 @@ POST hamlet_raw/_update/1
   }
 }
 ```
+Create hamlet index
+```
+PUT hamlet/_doc/_bulk
+{"index":{"_index":"hamlet","_id":0}}
+{"line_number":"1.1.1","speaker":"BERNARDO","text_entry":"Whos there?"}
+{"index":{"_index":"hamlet","_id":1}}
+{"line_number":"1.1.2","speaker":"FRANCISCO","text_entry":"Nay, answer me: stand, and unfold yourself."}
+{"index":{"_index":"hamlet","_id":2}}
+{"line_number":"1.1.3","speaker":"BERNARDO","text_entry":"Long live the king!"}
+{"index":{"_index":"hamlet","_id":3}}
+{"line_number":"1.2.1","speaker":"KING CLAUDIUS","text_entry":"Though yet of Hamlet our dear brothers death"}
+{"index":{"_index":"hamlet","_id":4}}
+{"line_number":"1.2.2","speaker":"KING CLAUDIUS","text_entry":"The memory be green, and that it us befitted"}
+{"index":{"_index":"hamlet","_id":5}}
+{"line_number":"1.3.1","speaker":"LAERTES","text_entry":"My necessaries are embarkd: farewell:"}
+{"index":{"_index":"hamlet","_id":6}}
+{"line_number":"1.3.4","speaker":"LAERTES","text_entry":"But let me hear from you."}
+{"index":{"_index":"hamlet","_id":7}}
+{"line_number":"1.3.5","speaker":"OPHELIA","text_entry":"Do you doubt that?"}
+{"index":{"_index":"hamlet","_id":8}}
+{"line_number":"1.4.1","speaker":"HAMLET","text_entry":"The air bites shrewdly; it is very cold."}
+{"index":{"_index":"hamlet","_id":9}}
+{"line_number":"1.4.2","speaker":"HORATIO","text_entry":"It is a nipping and an eager air."}
+{"index":{"_index":"hamlet","_id":10}}
+{"line_number":"1.4.3","speaker":"HAMLET","text_entry":"What hour now?"}
+{"index":{"_index":"hamlet","_id":11}}
+{"line_number":"1.5.2","speaker":"Ghost","text_entry":"Mark me."}
+{"index":{"_index":"hamlet","_id":12}}
+{"line_number":"1.5.3","speaker":"HAMLET","text_entry":"I will."}
+```
